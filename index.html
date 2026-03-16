@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sudheesh | Lowkey Cinema</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -22,40 +23,41 @@ color:white;
 overflow-x:hidden;
 }
 
-/* PARTICLES */
+/* PROMO BANNER */
 
-#particles{
+.promo{
 position:fixed;
 top:0;
-left:0;
 width:100%;
-height:100%;
-z-index:-1;
+background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
+text-align:center;
+padding:6px;
+font-size:14px;
+z-index:2000;
 }
 
 /* NAVBAR */
 
 .navbar{
+position:fixed;
+top:30px;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 25px;
-position:fixed;
-top:0;
-width:100%;
+padding:15px 25px;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
-font-size:20px;
 font-weight:600;
+font-size:18px;
 }
 
 .hamburger{
-font-size:28px;
+font-size:26px;
 cursor:pointer;
 }
 
@@ -67,18 +69,17 @@ top:0;
 left:-260px;
 width:260px;
 height:100%;
-background:#101010;
-padding-top:90px;
+background:#111;
+padding-top:100px;
 transition:.4s;
-z-index:999;
+z-index:1500;
 }
 
 .sidebar a{
 display:block;
-padding:16px 30px;
-text-decoration:none;
+padding:15px 30px;
 color:#bbb;
-transition:.3s;
+text-decoration:none;
 }
 
 .sidebar a:hover{
@@ -87,13 +88,24 @@ color:white;
 padding-left:40px;
 }
 
+/* PARTICLES */
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
 /* PAGE SYSTEM */
 
 .page{
 display:none;
+padding-top:120px;
 min-height:100vh;
-padding-top:80px;
-animation:fade .7s ease;
+animation:fade .6s ease;
 }
 
 .page.active{
@@ -114,12 +126,9 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
-
 background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
 url("je.jpg");
-
 background-size:cover;
 background-position:center;
 }
@@ -132,25 +141,22 @@ color:transparent;
 }
 
 .hero p{
-max-width:500px;
-color:#ccc;
 margin-top:10px;
+color:#ccc;
 }
 
 .hero button{
-margin-top:25px;
-padding:12px 30px;
+margin-top:20px;
+padding:12px 28px;
 border:none;
 border-radius:25px;
 background:#ff4d4d;
 color:white;
 cursor:pointer;
-transition:.3s;
 }
 
-.hero button:hover{
-transform:scale(1.1);
-box-shadow:0 10px 30px rgba(255,77,77,.5);
+.order-btn{
+background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
 }
 
 /* CONTAINER */
@@ -158,14 +164,7 @@ box-shadow:0 10px 30px rgba(255,77,77,.5);
 .container{
 max-width:1100px;
 margin:auto;
-padding:80px 20px;
-}
-
-/* HEADINGS */
-
-h2{
-font-size:34px;
-margin-bottom:25px;
+padding:60px 20px;
 }
 
 /* CARDS */
@@ -173,73 +172,19 @@ margin-bottom:25px;
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.03);
+background:#141414;
 padding:25px;
 border-radius:12px;
 border:1px solid rgba(255,255,255,0.05);
-transition:.4s;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
-}
-
-/* ABOUT */
-
-.about-intro{
-font-size:18px;
-margin-bottom:15px;
-}
-
-.gradient{
-background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
--webkit-background-clip:text;
-color:transparent;
-}
-
-/* BADGES */
-
-.badges{
-margin-top:15px;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.badge{
-padding:8px 16px;
-border-radius:20px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-font-size:14px;
-}
-
-/* PROJECT CARDS */
-
-.project{
-height:180px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
-background:linear-gradient(135deg,#111,#1b1b1b);
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-/* YOUTUBE */
-
-.youtube-box{
-padding:40px;
-background:#141414;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.05);
-text-align:center;
+transform:translateY(-8px);
 }
 
 /* FOOTER */
@@ -249,12 +194,64 @@ text-align:center;
 padding:30px;
 border-top:1px solid rgba(255,255,255,0.05);
 color:#777;
+margin-bottom:70px;
+}
+
+/* MUSIC PLAYER */
+
+.music-player{
+position:fixed;
+bottom:0;
+width:100%;
+height:65px;
+background:#111;
+border-top:1px solid rgba(255,255,255,0.1);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+z-index:2000;
+}
+
+.player-left{
+font-size:14px;
+color:#ccc;
+}
+
+.player-center{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.play-btn{
+width:36px;
+height:36px;
+border:none;
+border-radius:50%;
+background:#ff4d4d;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.volume{
+width:120px;
+}
+
+.player-right{
+font-size:12px;
+color:#777;
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="promo">
+🔥 Edits now ₹100 • Static Websites ₹200
+</div>
 
 <canvas id="particles"></canvas>
 
@@ -264,13 +261,10 @@ color:#777;
 </div>
 
 <div class="sidebar" id="sidebar">
-
 <a onclick="openPage('home')">Home</a>
 <a onclick="openPage('about')">About</a>
 <a onclick="openPage('skills')">Skills</a>
 <a onclick="openPage('projects')">Projects</a>
-<a onclick="openPage('youtube')">YouTube</a>
-
 </div>
 
 <!-- HOME -->
@@ -280,43 +274,14 @@ color:#777;
 <section class="hero">
 
 <h1>Sudheesh</h1>
-<!-- Background Music Snippet -->
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
-<button id="musicBtn" style="
-position:fixed;
-bottom:20px;
-right:20px;
-padding:10px 16px;
-border:none;
-border-radius:20px;
-background:#ff4d4d;
-color:white;
-cursor:pointer;
-z-index:1000;">
-🎵 Music
-</button>
-
-<script>
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-btn.onclick = function(){
-  if(music.paused){
-    music.volume = 0.4;
-    music.play();
-    btn.innerHTML = "⏸ Pause";
-  } else {
-    music.pause();
-    btn.innerHTML = "🎵 Music";
-  }
-};
-</script>
-<p>Video Editor • Web Creator • YouTube Creator</p>
+<p>Editor • Web Creator • Lowkey Cinema</p>
 
 <button onclick="openPage('about')">Explore</button>
+
+<button class="order-btn">
+🔥 Get Your Edit Now – ₹100
+</button>
 
 </section>
 
@@ -330,20 +295,10 @@ btn.onclick = function(){
 
 <h2>About Me</h2>
 
-<p class="about-intro">
-Hey 👋 I'm <span class="gradient">Sudheesh</span>, the creator behind
-<span class="gradient">Lowkey Cinema</span>.
-</p>
-
 <p>
-I create cinematic edits and modern websites focused on storytelling and aesthetics.
+Hey 👋 I'm Sudheesh, the creator of Lowkey Cinema.  
+I create cinematic edits and modern responsive websites.
 </p>
-
-<div class="badges">
-<span class="badge">🎬 Editor</span>
-<span class="badge">💻 Web Creator</span>
-<span class="badge">📺 YouTube Creator</span>
-</div>
 
 </div>
 
@@ -361,17 +316,17 @@ I create cinematic edits and modern websites focused on storytelling and aesthet
 
 <div class="card">
 <h3>Video Editing</h3>
-<p>Cinematic storytelling edits and music synced visuals.</p>
+<p>Cinematic edits and storytelling visuals.</p>
 </div>
 
 <div class="card">
 <h3>Web Development</h3>
-<p>Modern responsive websites with sleek UI design.</p>
+<p>Modern responsive website creation.</p>
 </div>
 
 <div class="card">
-<h3>Content Creation</h3>
-<p>Creative edits and shorts on my YouTube channel.</p>
+<h3>YouTube Content</h3>
+<p>Creative edits and shorts.</p>
 </div>
 
 </div>
@@ -390,29 +345,9 @@ I create cinematic edits and modern websites focused on storytelling and aesthet
 
 <div class="cards">
 
-<div class="project">🎬 Cinematic Edits</div>
-<div class="project">🌐 Website Projects</div>
-<div class="project">📱 YouTube Shorts</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- YOUTUBE -->
-
-<div class="page" id="youtube">
-
-<div class="container">
-
-<h2>YouTube Channel</h2>
-
-<div class="youtube-box">
-
-<h3>Lowkey Cinema</h3>
-
-<p>Watch cinematic edits and creative visuals on my YouTube channel.</p>
+<div class="card">🎬 Cinematic Edits</div>
+<div class="card">🌐 Website Projects</div>
+<div class="card">📱 YouTube Shorts</div>
 
 </div>
 
@@ -424,16 +359,42 @@ I create cinematic edits and modern websites focused on storytelling and aesthet
 © 2026 Sudheesh | Lowkey Cinema
 </footer>
 
+<!-- AUDIO -->
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player">
+
+<div class="player-left">
+🎵 Lowkey Cinema Mix
+</div>
+
+<div class="player-center">
+
+<button class="play-btn" id="playBtn">▶</button>
+
+<input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="0.4">
+
+</div>
+
+<div class="player-right">
+Background Music
+</div>
+
+</div>
+
 <script>
 
 /* SIDEBAR */
 
 function toggleMenu(){
-let sidebar=document.getElementById("sidebar");
-sidebar.style.left = sidebar.style.left==="0px" ? "-260px":"0px";
+let s=document.getElementById("sidebar");
+s.style.left = s.style.left==="0px" ? "-260px":"0px";
 }
 
-/* PAGE NAV */
+/* PAGE SYSTEM */
 
 function openPage(id){
 
@@ -443,9 +404,8 @@ p.classList.remove("active");
 
 document.getElementById(id).classList.add("active");
 
-window.scrollTo({top:0,behavior:"smooth"});
-
 toggleMenu();
+
 }
 
 /* PARTICLES */
@@ -463,14 +423,16 @@ window.addEventListener("resize",resize);
 
 let particles=[];
 
-for(let i=0;i<100;i++){
+for(let i=0;i<90;i++){
+
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 r:Math.random()*2,
-dx:(Math.random()-0.5)*0.5,
-dy:(Math.random()-0.5)*0.5
+dx:(Math.random()-.5)*.5,
+dy:(Math.random()-.5)*.5
 });
+
 }
 
 function animate(){
@@ -497,6 +459,30 @@ requestAnimationFrame(animate);
 }
 
 animate();
+
+/* MUSIC PLAYER */
+
+const music=document.getElementById("music");
+const playBtn=document.getElementById("playBtn");
+const volume=document.getElementById("volume");
+
+music.volume=0.4;
+
+playBtn.onclick=()=>{
+
+if(music.paused){
+music.play();
+playBtn.innerHTML="⏸";
+}else{
+music.pause();
+playBtn.innerHTML="▶";
+}
+
+};
+
+volume.oninput=()=>{
+music.volume=volume.value;
+};
 
 </script>
 
