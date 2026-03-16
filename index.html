@@ -17,12 +17,12 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0f0f0f;
+background:#0b0b0b;
 color:white;
 overflow-x:hidden;
 }
 
-/* PARTICLE CANVAS */
+/* PARTICLES */
 
 #particles{
 position:fixed;
@@ -44,9 +44,9 @@ position:fixed;
 top:0;
 width:100%;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,0.05);
+z-index:1000;
 }
 
 .logo{
@@ -67,7 +67,7 @@ top:0;
 left:-260px;
 width:260px;
 height:100%;
-background:#111;
+background:#101010;
 padding-top:90px;
 transition:.4s;
 z-index:999;
@@ -75,16 +75,34 @@ z-index:999;
 
 .sidebar a{
 display:block;
-padding:15px 30px;
+padding:16px 30px;
 text-decoration:none;
-color:#ccc;
+color:#bbb;
 transition:.3s;
 }
 
 .sidebar a:hover{
-background:#1f1f1f;
+background:#1c1c1c;
 color:white;
 padding-left:40px;
+}
+
+/* PAGE SYSTEM */
+
+.page{
+display:none;
+min-height:100vh;
+padding-top:80px;
+animation:fade .7s ease;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 /* HERO */
@@ -99,7 +117,7 @@ text-align:center;
 padding:20px;
 
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
 url("je.jpg");
 
 background-size:cover;
@@ -107,8 +125,7 @@ background-position:center;
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:10px;
+font-size:60px;
 background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
 -webkit-background-clip:text;
 color:transparent;
@@ -116,7 +133,8 @@ color:transparent;
 
 .hero p{
 max-width:500px;
-color:#ddd;
+color:#ccc;
+margin-top:10px;
 }
 
 .hero button{
@@ -131,22 +149,26 @@ transition:.3s;
 }
 
 .hero button:hover{
-transform:scale(1.05);
-box-shadow:0 10px 25px rgba(255,77,77,.5);
+transform:scale(1.1);
+box-shadow:0 10px 30px rgba(255,77,77,.5);
 }
 
-/* SECTIONS */
+/* CONTAINER */
 
-.section{
+.container{
 max-width:1100px;
 margin:auto;
 padding:80px 20px;
 }
 
-.section h2{
-font-size:32px;
+/* HEADINGS */
+
+h2{
+font-size:34px;
 margin-bottom:25px;
 }
+
+/* CARDS */
 
 .cards{
 display:grid;
@@ -164,7 +186,60 @@ transition:.4s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 15px 35px rgba(0,0,0,0.5);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* ABOUT */
+
+.about-intro{
+font-size:18px;
+margin-bottom:15px;
+}
+
+.gradient{
+background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* BADGES */
+
+.badges{
+margin-top:15px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.badge{
+padding:8px 16px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+font-size:14px;
+}
+
+/* PROJECT CARDS */
+
+.project{
+height:180px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+background:linear-gradient(135deg,#111,#1b1b1b);
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* YOUTUBE */
+
+.youtube-box{
+padding:40px;
+background:#141414;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+text-align:center;
 }
 
 /* FOOTER */
@@ -189,37 +264,63 @@ color:#777;
 </div>
 
 <div class="sidebar" id="sidebar">
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#youtube">YouTube</a>
+
+<a onclick="openPage('home')">Home</a>
+<a onclick="openPage('about')">About</a>
+<a onclick="openPage('skills')">Skills</a>
+<a onclick="openPage('projects')">Projects</a>
+<a onclick="openPage('youtube')">YouTube</a>
+
 </div>
+
+<!-- HOME -->
+
+<div class="page active" id="home">
 
 <section class="hero">
 
 <h1>Sudheesh</h1>
 
-<p>
-Professional video editor and website creator behind the YouTube channel Lowkey Cinema.
-</p>
+<p>Video Editor • Web Creator • YouTube Creator</p>
 
-<button onclick="scrollDown()">Explore</button>
+<button onclick="openPage('about')">Explore</button>
 
 </section>
 
-<section class="section" id="about">
+</div>
+
+<!-- ABOUT -->
+
+<div class="page" id="about">
+
+<div class="container">
 
 <h2>About Me</h2>
 
-<p>
-Hi, I'm Sudheesh. I create cinematic video edits and modern responsive websites.
-My YouTube channel <b>Lowkey Cinema</b> focuses on movie edits and storytelling visuals.
+<p class="about-intro">
+Hey 👋 I'm <span class="gradient">Sudheesh</span>, the creator behind
+<span class="gradient">Lowkey Cinema</span>.
 </p>
 
-</section>
+<p>
+I create cinematic edits and modern websites focused on storytelling and aesthetics.
+</p>
 
-<section class="section" id="skills">
+<div class="badges">
+<span class="badge">🎬 Editor</span>
+<span class="badge">💻 Web Creator</span>
+<span class="badge">📺 YouTube Creator</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- SKILLS -->
+
+<div class="page" id="skills">
+
+<div class="container">
 
 <h2>Skills</h2>
 
@@ -227,27 +328,67 @@ My YouTube channel <b>Lowkey Cinema</b> focuses on movie edits and storytelling 
 
 <div class="card">
 <h3>Video Editing</h3>
-<p>Cinematic editing, storytelling, movie edits.</p>
+<p>Cinematic storytelling edits and music synced visuals.</p>
 </div>
 
 <div class="card">
 <h3>Web Development</h3>
-<p>Responsive modern websites with clean UI.</p>
+<p>Modern responsive websites with sleek UI design.</p>
 </div>
 
 <div class="card">
 <h3>Content Creation</h3>
-<p>YouTube edits, shorts and creative visuals.</p>
+<p>Creative edits and shorts on my YouTube channel.</p>
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="page" id="projects">
+
+<div class="container">
+
+<h2>Projects</h2>
+
+<div class="cards">
+
+<div class="project">🎬 Cinematic Edits</div>
+<div class="project">🌐 Website Projects</div>
+<div class="project">📱 YouTube Shorts</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- YOUTUBE -->
+
+<div class="page" id="youtube">
+
+<div class="container">
+
+<h2>YouTube Channel</h2>
+
+<div class="youtube-box">
+
+<h3>Lowkey Cinema</h3>
+
+<p>Watch cinematic edits and creative visuals on my YouTube channel.</p>
+
+</div>
+
+</div>
+
+</div>
 
 <footer>
-
 © 2026 Sudheesh | Lowkey Cinema
-
 </footer>
 
 <script>
@@ -255,40 +396,41 @@ My YouTube channel <b>Lowkey Cinema</b> focuses on movie edits and storytelling 
 /* SIDEBAR */
 
 function toggleMenu(){
-
 let sidebar=document.getElementById("sidebar");
-
-if(sidebar.style.left==="0px"){
-sidebar.style.left="-260px";
-}else{
-sidebar.style.left="0px";
+sidebar.style.left = sidebar.style.left==="0px" ? "-260px":"0px";
 }
 
-}
+/* PAGE NAV */
 
-/* SCROLL */
+function openPage(id){
 
-function scrollDown(){
-
-window.scrollTo({
-top:window.innerHeight,
-behavior:"smooth"
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
 });
 
+document.getElementById(id).classList.add("active");
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+toggleMenu();
 }
 
-/* PARTICLE ANIMATION */
+/* PARTICLES */
 
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
 
+function resize(){
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
+}
+
+resize();
+window.addEventListener("resize",resize);
 
 let particles=[];
 
-for(let i=0;i<80;i++){
-
+for(let i=0;i<100;i++){
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
@@ -296,7 +438,6 @@ r:Math.random()*2,
 dx:(Math.random()-0.5)*0.5,
 dy:(Math.random()-0.5)*0.5
 });
-
 }
 
 function animate(){
@@ -313,8 +454,8 @@ ctx.fill();
 p.x+=p.dx;
 p.y+=p.dy;
 
-if(p.x<0||p.x>canvas.width) p.dx*=-1;
-if(p.y<0||p.y>canvas.height) p.dy*=-1;
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
 
 });
 
