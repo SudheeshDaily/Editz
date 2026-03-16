@@ -280,7 +280,40 @@ color:#777;
 <section class="hero">
 
 <h1>Sudheesh</h1>
+<!-- Background Music Snippet -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
+<button id="musicBtn" style="
+position:fixed;
+bottom:20px;
+right:20px;
+padding:10px 16px;
+border:none;
+border-radius:20px;
+background:#ff4d4d;
+color:white;
+cursor:pointer;
+z-index:1000;">
+🎵 Music
+</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.onclick = function(){
+  if(music.paused){
+    music.volume = 0.4;
+    music.play();
+    btn.innerHTML = "⏸ Pause";
+  } else {
+    music.pause();
+    btn.innerHTML = "🎵 Music";
+  }
+};
+</script>
 <p>Video Editor • Web Creator • YouTube Creator</p>
 
 <button onclick="openPage('about')">Explore</button>
