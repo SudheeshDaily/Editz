@@ -3,488 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sudheesh | Lowkey Cinema</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Sudheesh Editz - Updating</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
 body{
-background:#0b0b0b;
-color:white;
-overflow-x:hidden;
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
 }
-
-/* PROMO BANNER */
-
-.promo{
-position:fixed;
-top:0;
-width:100%;
-background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
-text-align:center;
-padding:6px;
-font-size:14px;
-z-index:2000;
-}
-
-/* NAVBAR */
-
-.navbar{
-position:fixed;
-top:30px;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 25px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-weight:600;
-font-size:18px;
-}
-
-.hamburger{
-font-size:26px;
-cursor:pointer;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100%;
-background:#111;
-padding-top:100px;
-transition:.4s;
-z-index:1500;
-}
-
-.sidebar a{
-display:block;
-padding:15px 30px;
-color:#bbb;
-text-decoration:none;
-}
-
-.sidebar a:hover{
-background:#1c1c1c;
-color:white;
-padding-left:40px;
-}
-
-/* PARTICLES */
-
-#particles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-/* PAGE SYSTEM */
-
-.page{
-display:none;
-padding-top:120px;
-min-height:100vh;
-animation:fade .6s ease;
-}
-
-.page.active{
-display:block;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
-url("je.jpg");
-background-size:cover;
-background-position:center;
-}
-
-.hero h1{
-font-size:60px;
-background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
--webkit-background-clip:text;
-color:transparent;
-}
-
-.hero p{
-margin-top:10px;
-color:#ccc;
-}
-
-.hero button{
-margin-top:20px;
-padding:12px 28px;
-border:none;
-border-radius:25px;
-background:#ff4d4d;
-color:white;
-cursor:pointer;
-}
-
-.order-btn{
-background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
-}
-
-/* CONTAINER */
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    max-width:500px;
 }
 
-/* CARDS */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+h1{
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.card{
-background:#141414;
-padding:25px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.05);
-transition:.3s;
+p{
+    font-size:18px;
+    opacity:0.9;
 }
 
-.card:hover{
-transform:translateY(-8px);
+.loader{
+    margin:25px auto;
+    border:4px solid rgba(255,255,255,0.2);
+    border-top:4px solid white;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    animation:spin 1s linear infinite;
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:30px;
-border-top:1px solid rgba(255,255,255,0.05);
-color:#777;
-margin-bottom:70px;
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
 }
-
-/* MUSIC PLAYER */
-
-.music-player{
-position:fixed;
-bottom:0;
-width:100%;
-height:65px;
-background:#111;
-border-top:1px solid rgba(255,255,255,0.1);
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 20px;
-z-index:2000;
-}
-
-.player-left{
-font-size:14px;
-color:#ccc;
-}
-
-.player-center{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.play-btn{
-width:36px;
-height:36px;
-border:none;
-border-radius:50%;
-background:#ff4d4d;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-.volume{
-width:120px;
-}
-
-.player-right{
-font-size:12px;
-color:#777;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="promo">
-🔥 Edits now ₹100 • Static Websites ₹200
-</div>
-
-<canvas id="particles"></canvas>
-
-<div class="navbar">
-<div class="logo">Sudheesh Editz</div>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-</div>
-
-<div class="sidebar" id="sidebar">
-<a onclick="openPage('home')">Home</a>
-<a onclick="openPage('about')">About</a>
-<a onclick="openPage('skills')">Skills</a>
-<a onclick="openPage('projects')">Projects</a>
-</div>
-
-<!-- HOME -->
-
-<div class="page active" id="home">
-
-<section class="hero">
-
-<h1>Sudheesh</h1>
-
-<p>Editor • Web Creator • Lowkey Cinema</p>
-
-<button onclick="openPage('about')">Explore</button>
-
-<button class="order-btn">
-🔥 Get Your Edit Now – ₹100
-</button>
-
-</section>
-
-</div>
-
-<!-- ABOUT -->
-
-<div class="page" id="about">
-
 <div class="container">
+<h1>Sudheesh Editz</h1>
 
-<h2>About Me</h2>
+<div class="loader"></div>
 
-<p>
-Hey 👋 I'm Sudheesh, the creator of Lowkey Cinema.  
-I create cinematic edits and modern responsive websites.
-</p>
-
-</div>
+<p>The page is currently updating.</p>
+<p>Please try again after <b>4:00 PM, March 17 (IST)</b>.</p>
 
 </div>
-
-<!-- SKILLS -->
-
-<div class="page" id="skills">
-
-<div class="container">
-
-<h2>Skills</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Video Editing</h3>
-<p>Cinematic edits and storytelling visuals.</p>
-</div>
-
-<div class="card">
-<h3>Web Development</h3>
-<p>Modern responsive website creation.</p>
-</div>
-
-<div class="card">
-<h3>YouTube Content</h3>
-<p>Creative edits and shorts.</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PROJECTS -->
-
-<div class="page" id="projects">
-
-<div class="container">
-
-<h2>Projects</h2>
-
-<div class="cards">
-
-<div class="card">🎬 Cinematic Edits</div>
-<div class="card">🌐 Website Projects</div>
-<div class="card">📱 YouTube Shorts</div>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-© 2026 Sudheesh | Lowkey Cinema
-</footer>
-
-<!-- AUDIO -->
-
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<div class="music-player">
-
-<div class="player-left">
-🎵 Lowkey Cinema Mix
-</div>
-
-<div class="player-center">
-
-<button class="play-btn" id="playBtn">▶</button>
-
-<input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="0.4">
-
-</div>
-
-<div class="player-right">
-Background Music
-</div>
-
-</div>
-
-<script>
-
-/* SIDEBAR */
-
-function toggleMenu(){
-let s=document.getElementById("sidebar");
-s.style.left = s.style.left==="0px" ? "-260px":"0px";
-}
-
-/* PAGE SYSTEM */
-
-function openPage(id){
-
-document.querySelectorAll(".page").forEach(p=>{
-p.classList.remove("active");
-});
-
-document.getElementById(id).classList.add("active");
-
-toggleMenu();
-
-}
-
-/* PARTICLES */
-
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-
-function resize(){
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-}
-
-resize();
-window.addEventListener("resize",resize);
-
-let particles=[];
-
-for(let i=0;i<90;i++){
-
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2,
-dx:(Math.random()-.5)*.5,
-dy:(Math.random()-.5)*.5
-});
-
-}
-
-function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach(p=>{
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fillStyle="white";
-ctx.fill();
-
-p.x+=p.dx;
-p.y+=p.dy;
-
-if(p.x<0||p.x>canvas.width)p.dx*=-1;
-if(p.y<0||p.y>canvas.height)p.dy*=-1;
-
-});
-
-requestAnimationFrame(animate);
-
-}
-
-animate();
-
-/* MUSIC PLAYER */
-
-const music=document.getElementById("music");
-const playBtn=document.getElementById("playBtn");
-const volume=document.getElementById("volume");
-
-music.volume=0.4;
-
-playBtn.onclick=()=>{
-
-if(music.paused){
-music.play();
-playBtn.innerHTML="⏸";
-}else{
-music.pause();
-playBtn.innerHTML="▶";
-}
-
-};
-
-volume.oninput=()=>{
-music.volume=volume.value;
-};
-
-</script>
 
 </body>
 </html>
