@@ -3,68 +3,327 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sudheesh Editz - Updating</title>
+
+<title>Sudheesh | Lowkey Cinema</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:white;
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0b0b0b;color:white;overflow-x:hidden}
+
+/* PROMO */
+.promo{
+position:fixed;
+top:0;
+width:100%;
+background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
+text-align:center;
+padding:6px;
+font-size:14px;
+z-index:3000;
 }
 
-.container{
-    text-align:center;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    max-width:500px;
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:28px;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 25px;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+z-index:2000;
 }
 
-h1{
-    font-size:32px;
-    margin-bottom:10px;
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:-260px;
+width:260px;
+height:100%;
+background:#111;
+padding-top:100px;
+transition:.4s;
+z-index:2500;
+}
+.sidebar a{
+display:block;
+padding:15px 30px;
+color:#bbb;
+cursor:pointer;
+}
+.sidebar a:hover{background:#1c1c1c;color:#fff}
+
+/* PAGE */
+.page{display:none;padding-top:120px;min-height:100vh}
+.page.active{display:block}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+url("je.jpg");
+background-size:cover;
 }
 
-p{
-    font-size:18px;
-    opacity:0.9;
+.hero h1{
+font-size:60px;
+background:linear-gradient(90deg,#ff4d4d,#ff9a3c);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-.loader{
-    margin:25px auto;
-    border:4px solid rgba(255,255,255,0.2);
-    border-top:4px solid white;
-    border-radius:50%;
-    width:40px;
-    height:40px;
-    animation:spin 1s linear infinite;
+.hero button{
+margin-top:20px;
+padding:12px 26px;
+border:none;
+border-radius:25px;
+background:#ff4d4d;
+color:#fff;
+cursor:pointer;
 }
 
-@keyframes spin{
-    0%{transform:rotate(0deg);}
-    100%{transform:rotate(360deg);}
+/* CONTENT */
+.container{max-width:1000px;margin:auto;padding:60px 20px}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
+
+.card{
+background:#141414;
+padding:25px;
+border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+margin-bottom:90px;
+color:#777;
+}
+
+/* ===== MUSIC PLAYER ===== */
+
+.player{
+position:fixed;
+bottom:0;
+width:100%;
+background:#111;
+border-top:1px solid rgba(255,255,255,.1);
+padding:10px 15px;
+z-index:3000;
+}
+
+.player-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.controls{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.play{
+width:36px;height:36px;
+border:none;border-radius:50%;
+background:#ff4d4d;color:#fff;
+cursor:pointer;
+}
+
+/* progress bar */
+.progress{
+width:100%;
+height:4px;
+background:#333;
+margin-top:8px;
+cursor:pointer;
+position:relative;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#ff4d4d;
+}
+
+.time{
+font-size:12px;color:#aaa;
+}
+
+/* equalizer */
+.eq{
+display:flex;
+gap:3px;
+}
+.eq span{
+width:3px;height:10px;
+background:#ff4d4d;
+animation:equalize 1s infinite;
+}
+.eq span:nth-child(2){animation-delay:.2s}
+.eq span:nth-child(3){animation-delay:.4s}
+
+@keyframes equalize{
+0%,100%{height:5px}
+50%{height:15px}
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="promo">🔥 Edits ₹100 • Websites ₹200</div>
+
+<div class="navbar">
+<div>Sudheesh Editz</div>
+<div onclick="toggleMenu()">☰</div>
+</div>
+
+<div class="sidebar" id="sidebar">
+<a onclick="openPage('home')">Home</a>
+<a onclick="openPage('about')">About</a>
+<a onclick="openPage('skills')">Skills</a>
+<a onclick="openPage('projects')">Projects</a>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="home">
+<section class="hero">
+<h1>Sudheesh</h1>
+<p>Editor • Web Creator • Lowkey Cinema</p>
+<button onclick="openPage('about')">Explore</button>
+<button>🔥 Get Your Edit – ₹100</button>
+</section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="about">
 <div class="container">
-<h1>Sudheesh Editz</h1>
+<h2>About</h2>
+<p>I create cinematic edits and premium websites.</p>
+</div>
+</div>
 
-<div class="loader"></div>
+<!-- SKILLS -->
+<div class="page" id="skills">
+<div class="container">
+<h2>Skills</h2>
+<div class="cards">
+<div class="card">🎬 Editing</div>
+<div class="card">💻 Web</div>
+<div class="card">📺 YouTube</div>
+</div>
+</div>
+</div>
 
-<p>The page is currently updating.</p>
-<p>Please try again after <b>4:00 PM, March 17 (IST)</b>.</p>
+<!-- PROJECTS -->
+<div class="page" id="projects">
+<div class="container">
+<h2>Projects</h2>
+<div class="cards">
+<div class="card">Edits</div>
+<div class="card">Websites</div>
+<div class="card">Shorts</div>
+</div>
+</div>
+</div>
+
+<footer>© 2026 Sudheesh | Lowkey Cinema</footer>
+
+<!-- AUDIO -->
+<audio id="audio" src="music.mp3"></audio>
+
+<!-- PLAYER -->
+<div class="player">
+
+<div class="player-top">
+
+<div class="controls">
+<button class="play" id="play">▶</button>
+<div class="eq"><span></span><span></span><span></span></div>
+</div>
+
+<div class="time" id="time">0:00 / 0:00</div>
 
 </div>
+
+<div class="progress" id="progress">
+<div class="progress-bar" id="bar"></div>
+</div>
+
+</div>
+
+<script>
+
+/* NAV */
+function toggleMenu(){
+let s=document.getElementById("sidebar");
+s.style.left = s.style.left==="0px" ? "-260px":"0px";
+}
+
+function openPage(id){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+document.getElementById("sidebar").style.left="-260px";
+}
+
+/* PLAYER */
+const audio=document.getElementById("audio");
+const play=document.getElementById("play");
+const bar=document.getElementById("bar");
+const progress=document.getElementById("progress");
+const time=document.getElementById("time");
+
+audio.volume=0.4;
+
+play.onclick=()=>{
+if(audio.paused){
+audio.play();
+play.innerHTML="⏸";
+}else{
+audio.pause();
+play.innerHTML="▶";
+}
+};
+
+audio.ontimeupdate=()=>{
+let percent=(audio.currentTime/audio.duration)*100;
+bar.style.width=percent+"%";
+
+let cur=Math.floor(audio.currentTime);
+let dur=Math.floor(audio.duration||0);
+
+time.innerHTML=
+Math.floor(cur/60)+":"+(cur%60).toString().padStart(2,'0')
++" / "+
+Math.floor(dur/60)+":"+(dur%60).toString().padStart(2,'0');
+};
+
+progress.onclick=(e)=>{
+let width=progress.clientWidth;
+let clickX=e.offsetX;
+audio.currentTime=(clickX/width)*audio.duration;
+};
+
+</script>
 
 </body>
 </html>
